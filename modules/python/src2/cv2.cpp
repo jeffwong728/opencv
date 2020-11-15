@@ -14,13 +14,7 @@
 #endif
 
 #include <cmath>
-#ifdef _DEBUG
-#undef _DEBUG
 #include <Python.h>
-#define _DEBUG
-#else
-#include <Python.h>
-#endif
 #include <limits>
 
 #if PY_MAJOR_VERSION < 3
