@@ -14,7 +14,19 @@
 #endif
 
 #include <cmath>
+#if defined(_MSC_VER)
+#  if defined(_DEBUG) && !defined(Py_DEBUG)
+#    define CVPY_DEBUG_MARKER
+#    undef _DEBUG
+#  endif
+#endif
 #include <Python.h>
+#if defined(_MSC_VER)
+#  if defined(CVPY_DEBUG_MARKER)
+#    define _DEBUG
+#    undef CVPY_DEBUG_MARKER
+#  endif
+#endif
 #include <limits>
 
 #if PY_MAJOR_VERSION < 3
